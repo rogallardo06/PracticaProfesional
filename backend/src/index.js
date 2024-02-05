@@ -1,0 +1,15 @@
+// Configuración de la aplicación
+const express = require("express");
+const app = express();
+const router = require("./routers/index");
+
+// Requerimos el puerto
+const PORT = process.env.PORT || 3000
+
+// Configurar las rutas
+app.use("/", router);
+
+//console.log(process.env);
+
+// Iniciar el servidor
+app.listen(PORT, () => console.log(`El servidor está corriendo en: http://localhost:${PORT}`));
