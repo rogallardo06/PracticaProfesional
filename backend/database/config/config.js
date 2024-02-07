@@ -4,7 +4,9 @@ module.exports = {
     "password": null,
     "database": "recruiting",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "seederStorage": "json",
+    "seederStoragePath": "seeds.json"
   },
   "test": {
     "username": "root",

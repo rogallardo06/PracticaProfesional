@@ -5,6 +5,9 @@ module.exports = (sequelize,DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        aspirantId: {
+            type: DataTypes.INTEGER
+        },
         link: {
             type: DataTypes.STRING(25),
             allowNull: false
@@ -28,9 +31,9 @@ module.exports = (sequelize,DataTypes) => {
 
     Profile.associate = function(models){
 
-        Profile.hasOne(models.Aspirant, {
+        Profile.belongsTo(models.Aspirant, {
             as: "aspirant",
-            foreignKey: "profileId"
+            foreignKey: "aspirantId"
         });
 
     }

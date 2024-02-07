@@ -33,10 +33,6 @@ module.exports = (sequelize,DataTypes) => {
             allowNull: false,
             unique: true
         },
-        profileId: {
-            type: DataTypes.INTEGER,
-            unique: true
-        },
         birthDate: {
             type: DataTypes.DATE,
             allowNull: false
@@ -62,9 +58,9 @@ module.exports = (sequelize,DataTypes) => {
             otherKey: "profession"
         });
 
-        Aspirant.belongsTo(models.Profile, {
+        Aspirant.hasOne(models.Profile, {
             as: "profile",
-            foreignKey: "profileId"
+            foreignKey: "aspirantId"
         });
     }
 

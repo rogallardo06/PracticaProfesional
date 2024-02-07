@@ -16,8 +16,7 @@ module.exports = (sequelize,DataTypes) => {
         },
         yearsOnDuty: {
             type: DataTypes.INTEGER(2),
-            allowNull: false,
-            unique: true
+            allowNull: false
         }
     },
     {
