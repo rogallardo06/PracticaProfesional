@@ -2,7 +2,7 @@ const { faker } = require('@faker-js/faker'); // Requerir Faker para generar dat
 const { Aspirant } = require("../models/index"); // Requerir los registros para completar la relacion entre tablas.
 
 // Introducir en la consola para ejecutar el seeder completo.
-// npx sequelize-cli db:seed
+// npx sequelize-cli db:seed:all
 
 // Introducir en la consola para ejecutar el seeder individualmente
 // npx sequelize-cli db:seed --seed 20240206222719-create-profiles
@@ -38,8 +38,10 @@ module.exports = {
     return queryInterface.bulkInsert("Profiles", profiles, {}); // Insertamos los datos en la base de datos.
   },
 
-  down: (queryInterface, Sequelize) => {
+  // npx sequelize-cli db:seed:undo --seed 20240206222719-create-profiles || npx sequelize-cli db:seed:undo:all
 
-    return queryInterface.bulkDelete("Profiles", null, {}); // Metodo para revertir el "sembrado"
+  down: (queryInterface, Sequelize) => { // Metodo para revertir el "sembrado"
+
+    return queryInterface.bulkDelete("Profiles", null, {});
   }
 };

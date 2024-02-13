@@ -1,7 +1,7 @@
 const { faker } = require('@faker-js/faker');  // Requerir Faker para generar datos ficticios.
 
 // Introducir en la consola para ejecutar el seeder completo.
-// npx sequelize-cli db:seed
+// npx sequelize-cli db:seed:all
 
 // Introducir en la consola para ejecutar el seeder individualmente
 // npx sequelize-cli db:seed --seed 20240207072939-create-professions
@@ -37,6 +37,8 @@ module.exports = {
   ];
     return queryInterface.bulkInsert("Professions", professions, {}); // Insertamos los datos en la base de datos.
   },
+
+  // npx sequelize-cli db:seed:undo --seed 20240207072939-create-professions || npx sequelize-cli db:seed:undo:all
 
   down: (queryInterface, Sequelize) => { // Metodo para revertir el "sembrado"
 
