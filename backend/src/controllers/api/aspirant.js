@@ -21,9 +21,7 @@ const controller = {
     one: async (req, res) => {
         try {
             let id = req.params.id
-            let aspirant = await Aspirant.findByPk(id,{
-                include: ["history", "profile"]
-            })
+            let aspirant = await Aspirant.findByPk(id)
             return res.status(201).json({
                 meta: {
                     status: "Ok",

@@ -8,7 +8,7 @@ const profileRouter = require("./routers/api/profile");
 const cors = require("cors");
 const methodOverride = require("method-override");
 
-app.use(cors({origin: "*"}));
+app.use(cors({origin: "http://localhost:5173"}));
 
 const db = require("../database/models");
 
