@@ -7,7 +7,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 function Content() {
 
     return (
-        <section >
+        <section className="pb-4">
             <Routes>
                 <Route path="/" exact={true} Component={Home}/>
                 <Route path="/aspirants" exact={true} Component={AspirantsPage}/>
@@ -17,5 +17,3 @@ function Content() {
         </section>
     )
 }
-
-export default Content;
