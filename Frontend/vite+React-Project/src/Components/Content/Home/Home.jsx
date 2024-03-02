@@ -10,6 +10,7 @@ function Home() {
     useEffect(() => {
 
         async function getAspirants() {
+            setIsLoading(true)
             let response = await fetch("http://localhost:3000/api/aspirants");
             let data = await response.json();
             setAspirant(data.data)
