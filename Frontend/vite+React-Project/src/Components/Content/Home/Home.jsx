@@ -90,36 +90,47 @@ function Home() {
     return (
         <>
             {!isLoading ? (<>
-                <div className="slider-container w-full">
 
-                <Slider ref={slider => (sliderRef = slider)} {...settings}>
-                    
-                    {Array.isArray(aspirant) && aspirant.map((aspirante, i) => <Card 
-                        key={i + aspirante.name}
-                        imagen={aspirante.image}
-                        nombre={aspirante.name}
-                        apellido={aspirante.surname}
-                    />)}
+                <h2 className="text-3xl text-center font-bold px-4">Search and selection</h2>
+                <p className="text-center pl-4 pr-4">We find talent for your company, in all administrative, professional and technical positions.</p>
 
-                </Slider>
+                <img className="w-full pt-4 pb-4 sm:pl-16 sm:pr-16 md:px-40" src="./images/banner.jpg" alt="Rcursos Humanos"/>
 
-                <div style={{ textAlign: "center" }}>
-                    <button className="button" onClick={play}></button>
-                    <button className="button" onClick={pause}></button>
+
+                <div className="slider-container">
+
+                    <Slider ref={slider => (sliderRef = slider)} {...settings}>
+        
+                        {Array.isArray(aspirant) && aspirant.map((aspirante, i) => <Card 
+                            key={i + aspirante.name}
+                            imagen={aspirante.image}
+                            nombre={aspirante.name}
+                            apellido={aspirante.surname}
+                        />)}
+
+                    </Slider>
+
+                    <div style={{ textAlign: "center" }}>
+                        <button className="button" onClick={play}></button>
+                        <button className="button" onClick={pause}></button>
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="mx-10 dark:bg-stone-600 border rounded-xl">
+                    <a href="#" className="list-group-item p-2 bg-stone-900 text-white">List of Professions</a>
+                    {Array.isArray(professions) && professions.map((profession,i) => <Row key={i + profession.name} nombre={profession.name}/>)}
+                </div>
 
-            <div class="mx-10 dark:bg-stone-600">
-                <a href="#" className="list-group-item p-2 bg-dark text-white">List of Professions</a>
-                {Array.isArray(professions) && professions.map((profession,i) => <Row key={i + profession.name} nombre={profession.name}/>)}
-            </div>
-            </>) :
-                <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-                </div>}
+            </>)
+
+            : 
+
+            <div className="flex justify-content-center align-items-center" style={{height: "100vh"}}>
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>}
         </>
     )
 }

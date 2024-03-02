@@ -21,7 +21,7 @@ function AspirantsPage() {
     return (
         <>
             {!isLoading ? (<>
-                <div className="d-flex flex-wrap mt-5">
+                <div className="d-flex flex-wrap">
                     {Array.isArray(aspirant) && aspirant.map((aspirante, i) => <Card key={i + aspirante.name} imagen={aspirante.image} nombre={aspirante.name} apellido={aspirante.surname} />)}
                 </div>
             </>) :

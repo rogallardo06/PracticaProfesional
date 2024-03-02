@@ -24,7 +24,6 @@ function App() {
     setTheme(prevTheme => prevTheme == "light" ? "dark" : "light")
   }
 
-
   return (
     <>
       <header>
@@ -70,12 +69,7 @@ function App() {
 
       </header>
 
-      <div className='bg-slate-100 dark:bg-stone-950 dark:text-white'>
-
-        <h2 className="text-3xl text-center font-bold pt-20 px-4">Search and selection</h2>
-        <p className="text-center pl-4 pr-4">We find talent for your company, in all administrative, professional and technical positions.</p>
-
-        <img className="w-full pt-4 pb-4 sm:pl-16 sm:pr-16 md:px-40" src="./images/banner.jpg" alt="Rcursos Humanos"/>
+      <div className='bg-slate-100 dark:bg-stone-950 pt-4 dark:text-white'>
 
         <Content/>
 

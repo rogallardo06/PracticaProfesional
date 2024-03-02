@@ -22,8 +22,8 @@ function ProfessionsPage() {
     return (
         <>
             {!isLoading ? (<>
-                <div className="container list-group pe-0">
-                    <a href="#" className="list-group-item bg-dark text-white">Listado de Profesiones</a>
+                <div className="mx-10 dark:bg-stone-600 border rounded-xl">
+                    <a href="#" className="list-group-item p-2 bg-stone-900 text-white">Listado de Profesiones</a>
                     {Array.isArray(professions) && professions.map((profession, i) => <Row key={i + profession.name} nombre={profession.name} />)}
                 </div>
             </>) :
