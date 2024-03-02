@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import Content from './Components/Content/Content'
+import Content from './Components/Content/Content';
+import { Link } from 'react-router-dom';
 
 function App() {
 

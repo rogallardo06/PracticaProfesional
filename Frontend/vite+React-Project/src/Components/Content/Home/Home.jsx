@@ -1,12 +1,7 @@
-import AspirantsPage from "./AspirantsPage/AspirantsPage"
-import Home from "./Home/Home";
-import ProfessionsPage from "./ProfessionsPage/ProfessionsPage";
-import ApplyPage from "./ApplyPage/ApplyPage";
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { useEffect } from "react";
 import { useState } from "react";
-import Card from "./Card/Card";
-import Row from "./Row/Row";
+import Card from "../Card/Card";
+import Row from "../Row/Row";
 import React, { useRef } from "react";
 import Slider from "react-slick";
 
@@ -95,11 +90,6 @@ function Home() {
     return (
         <>
             {!isLoading ? (<>
-                <h2 className="text-3xl text-center font-bold pl-4 pr-4">Search and selection</h2>
-                <p className="text-center pl-4 pr-4">We find talent for your company, in all administrative, professional and technical positions.</p>
-
-                <img className="w-full pt-4 pb-4 sm:pl-16 sm:pr-16 md:pl-32 md:pr-32" src="./images/banner.jpg" alt="Rcursos Humanos" />
-
                 <div className="slider-container w-full">
 
                 <Slider ref={slider => (sliderRef = slider)} {...settings}>

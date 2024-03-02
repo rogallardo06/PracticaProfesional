@@ -2,7 +2,7 @@ import AspirantsPage from "./AspirantsPage/AspirantsPage"
 import Home from "./Home/Home";
 import ProfessionsPage from "./ProfessionsPage/ProfessionsPage";
 import ApplyPage from "./ApplyPage/ApplyPage";
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 function Content() {
 
@@ -17,3 +17,5 @@ function Content() {
         </section>
     )
 }
+
+export default Content
