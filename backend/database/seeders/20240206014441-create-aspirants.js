@@ -40,7 +40,7 @@ module.exports = {
 
         gender: faker.person.sex(),
 
-        image: faker.image.avatarLegacy()
+        image: faker.image.urlLoremFlickr({ category: 'profesional' })
       })
       
     }

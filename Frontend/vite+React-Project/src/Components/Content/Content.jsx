@@ -92,37 +92,40 @@ export default function Content() {
 
             {!isLoading ? (<>
 
-                <div className="slider-container w-full">
+                <div className="slider-container">
 
-                <Slider ref={slider => (sliderRef = slider)} {...settings}>
-                    
-                    {Array.isArray(aspirant) && aspirant.map((aspirante, i) => <Card 
-                        key={i + aspirante.name}
-                        imagen={aspirante.image}
-                        nombre={aspirante.name}
-                        apellido={aspirante.surname}
-                    />)}
+                    <Slider ref={slider => (sliderRef = slider)} {...settings}>
+                        
+                        {Array.isArray(aspirant) && aspirant.map((aspirante, i) => <Card 
+                            key={i + aspirante.name}
+                            imagen={aspirante.image}
+                            nombre={aspirante.name}
+                            apellido={aspirante.surname}
+                        />)}
 
-                </Slider>
+                    </Slider>
 
-                <div style={{ textAlign: "center" }}>
-                    <button className="button" onClick={play}></button>
-                    <button className="button" onClick={pause}></button>
+                    <div style={{ textAlign: "center" }}>
+                        <button className="button" onClick={play}></button>
+                        <button className="button" onClick={pause}></button>
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="mx-10 dark:bg-stone-600">
-                <a href="#" className="list-group-item p-2 bg-dark text-white">List of Professions</a>
-                {Array.isArray(professions) && professions.map((profession,i) => <Row key={i + profession.name} nombre={profession.name}/>)}
-            </div>
-
-            </>) : 
-            <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
+                <div class="mx-10 dark:bg-stone-600 border rounded-xl">
+                    <a href="#" className="list-group-item p-2 bg-stone-900 text-white">List of Professions</a>
+                    {Array.isArray(professions) && professions.map((profession,i) => <Row key={i + profession.name} nombre={profession.name}/>)}
                 </div>
-            </div>}
+
+                </>)
+
+                : 
+
+                <div className="flex justify-content-center align-items-center" style={{height: "100vh"}}>
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>}
 
         </section>
     )

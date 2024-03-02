@@ -23,14 +23,14 @@ function App() {
     setTheme(prevTheme => prevTheme == "light" ? "dark" : "light")
   }
 
-  
+
   return (
     <>
       <header>
 
-        <div className="container-fluid pb-3 dark:bg-neutral-900 dark:text-white">
+        <div className="pb-3 dark:bg-neutral-900 dark:text-white">
 
-          <nav className="navbar place-content-around">
+          <nav className="flex items-center p-2 place-content-around">
             
             <a className="w-8 sm:w-14" href="#">
               <img src="/images/recruiting-logo.png" alt="Logo" class="img-fluid"/>
@@ -48,11 +48,11 @@ function App() {
             <i className="fa-solid fa-right-to-bracket active d-sm-none"></i>
             <a className="d-sm-block d-none" href="#">apply</a>
 
-            <button onClick={handleChangeTheme}><i className="fa-solid fa-moon"></i></button>
+            <button onClick={handleChangeTheme}><i className="fa-solid fa-moon text-2xl"></i></button>
 
           </nav>
 
-          <form className="flex">
+          <form className="flex px-4">
               <input className="form-control me-2 dark:bg-zinc-800 dark:text-white" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -63,7 +63,7 @@ function App() {
 
       <div className='bg-slate-100 dark:bg-stone-950 dark:text-white'>
 
-        <h2 className="text-3xl text-center font-bold pl-4 pr-4">Search and selection</h2>
+        <h2 className="text-3xl text-center font-bold pt-20 px-4">Search and selection</h2>
         <p className="text-center pl-4 pr-4">We find talent for your company, in all administrative, professional and technical positions.</p>
 
         <img className="w-full pt-4 pb-4 sm:pl-16 sm:pr-16 md:px-40" src="./images/banner.jpg" alt="Rcursos Humanos"/>

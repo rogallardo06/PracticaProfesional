@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+section div:last-child a{
+    border-bottom: solid 1px gray;
+}
