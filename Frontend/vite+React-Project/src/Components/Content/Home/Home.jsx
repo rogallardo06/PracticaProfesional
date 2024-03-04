@@ -106,6 +106,10 @@ function Home() {
                             imagen={aspirante.image}
                             nombre={aspirante.name}
                             apellido={aspirante.surname}
+                            profession={aspirante.history[0].name}
+                            position={aspirante.history[0].History.position}
+                            company={aspirante.history[0].History.company}
+                            yearsOnDuty={aspirante.history[0].History.yearsOnDuty}
                         />)}
 
                     </Slider>
