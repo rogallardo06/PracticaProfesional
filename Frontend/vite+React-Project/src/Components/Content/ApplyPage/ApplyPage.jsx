@@ -103,7 +103,7 @@ function ApplyPage() {
 
                     <label className="mt-4 mx-4 px-2">Sex</label>
                     <select className="mx-4 pl-2 bg-neutral-200 dark:bg-stone-950 rounded-md px-2" name="gender"> profession
-                        <option value="male">Male</option>
+                        <option value="male" selected>Male</option>
                         <option value="female">Female</option>
                     </select>
 
