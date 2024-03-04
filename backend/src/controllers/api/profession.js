@@ -29,7 +29,7 @@ const controller = {
         } catch (error) {
             console.error("Error en la base de datos", error);
         }
-    }
+    },
 }
 
 module.exports = controller;

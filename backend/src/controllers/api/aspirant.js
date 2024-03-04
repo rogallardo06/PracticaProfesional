@@ -56,6 +56,39 @@ const controller = {
         } catch (error) {
             console.error("Error en la base de datos", error);
         }
+    },
+    create: async (req,res) => {
+
+            const { dni, name, surname, email, tel, linkedin, birthDate, gender, image, link, company, position, yearsOnDuty, profession} = req.body;
+            console.log(gender);
+        try {
+                
+            const newAspirant = await Aspirant.create({
+                dni: dni,
+                name: name,
+                surname: surname,
+                email: email,
+                tel: tel,
+                linkedin: linkedin,
+                birthDate: birthDate,
+                gender: gender,
+                image: image.name
+            });
+
+            const newHistories = await History.create({
+                profession: profession,
+                aspirant: newAspirant.id,
+                company: company,
+                position: position,
+                yearsOnDuty: yearsOnDuty,
+            })
+    
+            res.status(201).json({ message: "Usuario creado correctamente", user: newAspirant, history: newHistories });
+        } catch (error) {
+            console.log("Error al crear el usuario:", error);
+            res.status(500).json({ message: "Error al crear el usuario" });
+        }
+        
     }
 }
 
