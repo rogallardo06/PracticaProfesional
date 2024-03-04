@@ -36,7 +36,7 @@ function ApplyPage() {
 
     }
 
-    let handleChange = e => {
+    let handleChange = (e) => {
         let formulario = {}
         if (e.target.type === 'file') {
             formulario = {

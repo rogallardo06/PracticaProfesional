@@ -58,8 +58,9 @@ const controller = {
         }
     },
     create: async (req,res) => {
+
             const { dni, name, surname, email, tel, linkedin, birthDate, gender, image, link, company, position, yearsOnDuty, profession} = req.body;
-            console.log(req.body);
+            
         try {
                 
             const newAspirant = await Aspirant.create({
@@ -73,8 +74,21 @@ const controller = {
                 gender: gender,
                 image: image
             });
+
+            const newProfile = await Profile.create({
+                aspirantId: newAspirant.id,
+                link, link
+            })
+
+            const newHistories = await History.create({
+                profession: profession,
+                aspirant: newAspirant.id,
+                company: company,
+                position: position,
+                yearsOnDuty: yearsOnDuty,
+            })
     
-            res.status(201).json({ message: "Usuario creado correctamente", user: newAspirant });
+            res.status(201).json({ message: "Usuario creado correctamente", user: newAspirant, profile: newProfile , history: newHistories });
         } catch (error) {
             console.log("Error al crear el usuario:", error);
             res.status(500).json({ message: "Error al crear el usuario" });
