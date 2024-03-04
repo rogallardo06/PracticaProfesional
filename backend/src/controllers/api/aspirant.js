@@ -56,6 +56,30 @@ const controller = {
         } catch (error) {
             console.error("Error en la base de datos", error);
         }
+    },
+    create: async (req,res) => {
+            const { dni, name, surname, email, tel, linkedin, birthDate, gender, image, link, company, position, yearsOnDuty, profession} = req.body;
+            console.log(req.body);
+        try {
+                
+            const newAspirant = await Aspirant.create({
+                dni: dni,
+                name: name,
+                surname: surname,
+                email: email,
+                tel: tel,
+                linkedin: linkedin,
+                birthDate: birthDate,
+                gender: gender,
+                image: image
+            });
+    
+            res.status(201).json({ message: "Usuario creado correctamente", user: newAspirant });
+        } catch (error) {
+            console.log("Error al crear el usuario:", error);
+            res.status(500).json({ message: "Error al crear el usuario" });
+        }
+        
     }
 }
 
