@@ -3,14 +3,14 @@
 ## index
 
 * [Introduction](#introduction)
-* [Instalation](#instalation)
+* [Installation](#installation)
 
 ## Introduction
 
 This challenge presents us with the context of a human resources company, which is in charge of inserting candidates into high-demand industries.
 The objective is to create an API with the applicants' data and then display it in a front-end made with React.
 
-## Instalation
+## Installation
 
 ![Node js Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/1024px-Node.js_logo_2015.svg.png)
 
@@ -24,19 +24,25 @@ npx sequelize-cli db:seed:all
 
 With that done, we already have an API with candidate data, now we can execute the frontend entry point.
 
+We use the Vite template to work with React, to start its port we will have the command in the console:
+
+```bash
+vite dev
+```
+
 # Desafio de los Aspirantes
 
 ## índice
 
 * [Introducción](#introducción)
-* [Instalación](#instalación)
+* [Instalacion](#instalacion)
 
 ## Introducción
 
 Este desafío nos presenta el contexto de una empresa de recursos humanos, que se encarga de insertar candidatos en las industrias de alta demanda.
 El objetivo es crear una API con los datos de los postulantes para luego mostrarla en un frontend hecho con React.
 
-## Instalación
+## Instalacion
 
 El proyecto se creó en Nodejs, por lo que sera necesario el comando `npm install` antes de encender el proyecto.
 
@@ -47,3 +53,11 @@ npx sequelize-cli db:seed:all
 ```
 
 Una vez hecho esto, ya tenemos una API con los datos del candidato, ahora podemos ejecutar el punto de entrada del frontend.
+
+![Vite-logo](https://scrimba.com/articles/content/images/2022/08/Create-a-new-React-app-with-Vite---socials.png)
+
+Utilizamos la plantilla de Vite para trabajar con React, para iniciar su puerto dispondremos del comando en consola:
+
+```bash
+vite dev
+```
